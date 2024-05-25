@@ -13,6 +13,7 @@ import {
   updateContactSchema,
   updateFavoriteSchema,
 } from "../schemas/contactsSchemas.js";
+
 import { isValidId, validateBody } from "../helpers/index.js";
 import { authenticate } from "../middlewares/authMiddleware.js";
 
@@ -30,6 +31,7 @@ contactsRouter.post(
   validateBody(createContactSchema),
   createContact
 );
+
 contactsRouter.put(
   "/:id",
   authenticate,
